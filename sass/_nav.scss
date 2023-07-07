@@ -1,0 +1,163 @@
+@use 'variables' as *;
+
+nav {
+   padding: 2rem 0;
+   display: flex;
+   justify-content: space-between;
+
+
+   .logo {
+      display: grid;
+      align-items: center;
+      margin-right: 3rem;
+   }
+
+   .menu-btn {
+
+      .bar-top,
+      .bar-middle,
+      .bar-bottom {
+         width: 1.5rem;
+         height: 3px;
+         margin-bottom: 5px;
+         border-radius: 5rem;
+         background-color: $grayish-violet;
+         transform-origin: left;
+         cursor: pointer;
+         transition: $transition;
+      }
+   }
+
+   .nav-links {
+      position: absolute;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin: 0 auto;
+      gap: 2rem;
+      padding: 3rem 2rem;
+      background-color: $dark-violet;
+      border-radius: .7rem;
+      transition: $transition;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-100%);
+      z-index: 99;
+
+      .bar {
+         width: 100%;
+         height: 1px;
+         background-color: $grayish-violet;
+      }
+
+      li {
+         margin-bottom: 1rem;
+      }
+
+      a {
+         color: white;
+         font-weight: 700;
+         transition: $transition;
+
+         &:hover {
+            color: $cyan;
+         }
+      }
+
+      .nav-links-login {
+         align-items: center;
+
+         .sign-up {
+            background-color: $cyan;
+            padding: .7rem 2rem;
+            border-radius: 5rem;
+            transition: all 200ms ease;
+            color: white;
+
+            a{
+               color: white;
+            }
+
+            &:hover {
+               background-color: lighten($color: $cyan, $amount: 20%);
+            }
+         }
+      }
+   }
+
+   .active.nav-links {
+      transition: $transition;
+      visibility: visible;
+      opacity: 1;
+      top: 5rem;
+      transform: translateY(0);
+   }
+}
+
+/*===== RESPONSIVE =====*/
+@media (min-width:$breakpoint-sm) {
+   nav {
+      .menu-btn {
+         display: none;
+      }
+
+      .nav-links {
+         position: initial;
+         flex-direction: row;
+         visibility: visible;
+         opacity: 1;
+         transform: translateX(0);
+         background-color: white;
+         padding: 0;
+         justify-content: space-between;
+         width: 100%;
+
+         li {
+            width: fit-content;
+            margin-bottom: 0;
+         }
+
+         a {
+            color: $grayish-violet;
+         }
+
+         .sign-up {
+            color: white;
+         }
+
+         .nav-links-login {
+            display: flex;
+
+
+            .sign-up {
+               transition: $transition;
+               padding: .25rem 2rem;
+               margin-left: 1.5rem;
+
+               a {
+                  font-size: 16px;
+               }
+
+               &:hover {
+                  background-color: lighten($cyan, 10%);
+               }
+            }
+         }
+      }
+
+      .nav-links-options {
+         display: flex;
+         align-items: center;
+         gap: 1.3rem;
+      }
+
+      .bar {
+         display: none;
+      }
+
+
+   }
+
+}

@@ -1,0 +1,136 @@
+@use 'variables' as *;
+
+header {
+   margin-top: 2rem;
+   margin-bottom: 9rem;
+   overflow: hidden;
+
+   .banner {
+      margin-bottom: 2rem;
+
+      img {
+         max-width: 500px;
+      }
+   }
+
+   .banner-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      align-items: center;
+      text-align: center;
+      max-width: 40rem;
+
+      h1 {
+         font-size: 3rem;
+         color: $very-dark-violet;
+      }
+
+      p {
+         max-width: 30rem;
+         color: $grayish-violet;
+      }
+
+      a {
+         background-color: $cyan;
+         color: white;
+         padding: .7em 3em;
+         border-radius: 5rem;
+         transition: $transition;
+
+         &:hover {
+            background-color: lighten($color: $cyan, $amount: 20%);
+         }
+      }
+   }
+}
+
+/*===== RESPONSIVE =====*/
+@media (min-width:$breakpoint-phone) {
+
+   header {
+
+      .banner {
+         display: grid;
+         justify-content: center;
+      }
+   }
+}
+
+@media (min-width:$breakpoint-md) {
+
+   header {
+      .banner {
+         margin-bottom: 0;
+
+         img {
+            max-width: 550px;
+         }
+      }
+
+      .header-container {
+         display: flex;
+
+         .banner {
+            transform: translateX(8rem);
+            order: 1;
+         }
+
+         .banner-info {
+
+            h1 {
+               font-size: 3rem;
+            }
+         }
+      }
+
+      .banner-info {
+         align-items: flex-start;
+         text-align: start;
+
+         p {
+            font-size: 20px;
+         }
+      }
+   }
+}
+
+@media (min-width:$breakpoint-lg) {
+   header {
+
+      .header-container {
+
+         .banner {
+            // transform: translateX(10rem);
+            order: 1;
+
+            img {
+               max-width: 700px;
+            }
+         }
+
+         .banner-info {
+
+            h1 {
+               font-size: 3.5rem;
+            }
+         }
+      }
+   }
+}
+
+@media (min-width:$breakpoint-xl) {
+   header {
+
+      .header-container {
+
+         .banner-info {
+
+            h1 {
+               font-size: 4.5rem;
+            }
+         }
+      }
+   }
+}

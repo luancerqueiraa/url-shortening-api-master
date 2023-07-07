@@ -1,0 +1,26 @@
+@use 'variables' as *;
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-size: $font-size;
+   font-family: $font-primary;
+}
+
+li {
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+}
+
+.container {
+   width: 90%;
+   max-width: 1440px;
+   margin: 0 auto;
+}
