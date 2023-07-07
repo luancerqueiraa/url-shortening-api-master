@@ -11,7 +11,8 @@
 
 ### Links 
 
-- Live Site URL: [Live Site](https://luancerqueira1.github.io/url-shortening-api-master/)
+- Live Site URL: [Live Site](https://luancerqueiraa.github.io/url-shortening-api-master/)
+
 
 ### Screenshots
 
